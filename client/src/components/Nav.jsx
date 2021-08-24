@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router";
 
-function Nav() {
-  const { id } = useParams();
+function Nav({id}) {
   
   return (
     <div className="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -20,16 +18,15 @@ function Nav() {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/">
-            Full Stack Challenge
-          </Link>
         </div>
         <div id="nav-items" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
             <li>
-              <Link to={"/"+ id +"/add"}>ADD TRANSACTION</Link>
-              <Link to={"/"+ id }>ALL TRANSACTIONS </Link>
+              <Link to={"/add/"+ id}>ADD TRANSACTION</Link>
             </li>
+              <li>
+                <Link to={"/"+ id }>ALL TRANSACTIONS </Link> 
+              </li>
           </ul>
         </div>
       </div>

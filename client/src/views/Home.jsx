@@ -20,22 +20,25 @@ function Home() {
   }
 
   function handleSubmit(e) {
-      e.preventDefault();
-      axios.post("/login", user)
-      .then(history.push("/" + user.id)) 
-      .catch(()=>{
-          Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Wrong password or email!',
-        footer: '<a href="/register"> Register</a>'
-      })}
+    e.preventDefault();
+    axios.post("/login", user)
+      .then(response => {
+        history.push("/" + response.data.user)
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Wrong password or email!',
+          footer: '<a href="/register"> Register</a>'
+        })
+      }
       );
   }
 
   return (
     <p>
-      <h1> LOG IN </h1>
+      <h3> LOG IN </h3>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <input

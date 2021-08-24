@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import Nav from '../components/Nav';
 
 
 function Add() {
@@ -22,7 +23,7 @@ function Add() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    axios.post('/' + id , values)
+    axios.post('/transaction', {...values, id})
     .then(()=> {
       return Swal.fire({
         position: 'center',
@@ -47,6 +48,7 @@ function Add() {
 
   return (
     <p>
+      <Nav id={id} />
       <h3>Add a Transaction</h3>
       <hr />
       <form onSubmit={handleSubmit}>

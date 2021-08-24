@@ -1,17 +1,20 @@
 const { User } = require("../db");
 const bcrypt = require("bcrypt");
+const { v4: uuidv4 } = require('uuid');
+
 
 async function register(req, res) {
     try {
         const { name, password, email } = req.body
-        const hashedPassword = await bcrypt.hash(password, 12);
+        //const hashedPassword = await bcrypt.hash(password, 12);
         await User.create({
+            id: uuidv4(),
             name,
-            password: hashedPassword,
+            password,
             email
         })
         return res.sendStatus(200)
-    } catch {
+    } catch(error) {
         console.log(error)
     }
 }
@@ -21,7 +24,7 @@ async function login(req, res) {
     try {
         const user = await User.findOne({ where: { email: email } });
         if (!user) return res.status(404);
-        if (bcrypt.compareSync(password, user.password)) return res.status(200).json({user: user});
+        if (password== user.password) return res.status(200).json({user: user.dataValues.id});
         return res.status(404);
     } catch (error) {
         console.log(error);

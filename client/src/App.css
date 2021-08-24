@@ -2,6 +2,15 @@ body {
   text-align: center;
 }
 
+.transaction {
+  text-align: justify;
+}
+
+hr{
+  color: #282c34;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

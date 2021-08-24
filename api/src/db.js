@@ -34,6 +34,7 @@ const { Transaction, User } = sequelize.models;
 // Product.hasMany(Reviews);
 
 User.hasMany(Transaction);
+Transaction.belongsTo(User);
 
 module.exports = {
     ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

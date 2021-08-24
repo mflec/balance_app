@@ -26,7 +26,7 @@ function Register() {
         function handleSubmit(e) {
             e.preventDefault();
             axios.post("/register", user)
-            .then(history.push("/login")) 
+            .then(history.push("/")) 
             .catch(()=>{
                 Swal.fire({
               icon: 'error',

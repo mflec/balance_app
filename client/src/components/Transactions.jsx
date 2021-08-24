@@ -1,14 +1,14 @@
 import React from "react";
 
-function Transactions(transaction) {
-    return <div>
-        <h3>{transaction.concept}</h3>
+function Transactions({concept, amount, date, type}) {
+    return <div className="transaction">
+        <h1> ALL MY TRANSACTIONS </h1>
+        <hr/>
+        <h3>{concept}</h3>
+        <p className="trans-body">{amount}</p>
+        <p className="trans-body">{date}</p>
+        <p className="trans-body">{type}</p>
         <hr />
-        <p className="trans-body">{transaction.amount}</p>
-        <hr />
-        <p className="trans-body">{transaction.date}</p>
-        <hr />
-        <p className="trans-body">{transaction.type}</p>
     </div>
 }
 
