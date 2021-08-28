@@ -6,7 +6,6 @@ import axios from "axios";
 import { useHistory } from "react-router";
 
 function Home() {
-  const history = useHistory()
   const [user, setUser] = useState({
     email: "",
     password: "",
