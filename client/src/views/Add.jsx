@@ -1,13 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
 import Nav from '../components/Nav';
+import { useHistory } from "react-router";
 
 
 function Add() {
-  const { id } = useParams();
-
+  const history = useHistory()
   const [values, setValues] = React.useState({
     concept: "",
     amount: "",
@@ -23,32 +22,35 @@ function Add() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    axios.post('/transaction', {...values, id})
-    .then(()=> {
-      return Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Your transaction has been saved',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    })
-    .catch(
-      ()=> {
-        return Swal.fire({
+    const token = localStorage.getItem("token")
+    axios
+      .post('/transaction/post', { ...values, token: token })
+      .then(()=>{
+        history.push("/home")
+        Swal.fire({
           position: 'center',
-          icon: 'error',
-          title: 'Something went wrong',
+          icon: 'success',
+          title: 'Your transaction has been saved',
           showConfirmButton: false,
           timer: 1500
         })
-      }
-    )
+      })
+      .catch(
+        () => {
+          return Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'ALL DATA IS REQUIRED',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      )
   }
 
   return (
     <p>
-      <Nav id={id} />
+      <Nav />
       <h3>Add a Transaction</h3>
       <hr />
       <form onSubmit={handleSubmit}>

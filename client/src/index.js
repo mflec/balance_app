@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
-import store from './store';
+import store from './redux/store';
 import axios from 'axios';
 
 axios.defaults.baseURL = "http://localhost:3001"

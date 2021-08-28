@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getTransactions } from "../actions";
+import { getTransactions } from "../redux/actions";
 import Transactions from "../components/Transactions";
 import Nav from '../components/Nav';
 
@@ -10,18 +9,20 @@ import Nav from '../components/Nav';
 
 function Profile() {
   const transactions = useSelector((state) => state.transactions);
-
+  const user = useSelector((state) => state.name);
   const dispatch = useDispatch();
-  const { id } = useParams();
   // cuando se monta la pagina hace el fetch;
 
   useEffect(() => {
-    dispatch(getTransactions(id));
-  }, [id, dispatch]);
-  
+    const token = localStorage.getItem('token')
+    dispatch(getTransactions(token));
+  }, [dispatch]);
+
+  console.log(transactions)
   return (
     <p>
-      <Nav id={id}/>
+      <Nav/>
+      <h1> All {user} transactions </h1>
       {transactions ? transactions.map(
         transaction =>
         <Transactions 

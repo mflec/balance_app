@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "../utils/logout";
 
-function Nav({id}) {
+function Nav() {
   
   return (
     <div className="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -21,11 +22,14 @@ function Nav({id}) {
         </div>
         <div id="nav-items" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
+          <li>
+            <button onClick={Logout}> Logout </button>
+          </li>
             <li>
-              <Link to={"/add/"+ id}>ADD TRANSACTION</Link>
+              <Link to={"/add/"}>ADD TRANSACTION</Link>
             </li>
               <li>
-                <Link to={"/"+ id }>ALL TRANSACTIONS </Link> 
+                <Link to={"/home"}>ALL TRANSACTIONS </Link> 
               </li>
           </ul>
         </div>

@@ -12,15 +12,15 @@ module.exports = (sequelize) => {
     },
     amount: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     date: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
   });
 }

@@ -21,9 +21,11 @@ function Home() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios.post("/login", user)
-      .then(response => {
-        history.push("/" + response.data.user)
+    axios
+      .post("/login", user)
+      .then((response) => {
+        window.location.href= "/home"
+        localStorage.setItem("token", response.data.token);
       })
       .catch(() => {
         Swal.fire({
@@ -56,6 +58,7 @@ function Home() {
           <input
             id="password"
             required="required"
+            type="password"
             name="password"
             value={user.password}
             placeholder="Enter your Password..."
