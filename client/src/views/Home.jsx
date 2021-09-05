@@ -66,13 +66,13 @@ function Home() {
         </div>
         <br/>
         <div>
-          <button className="btn btn-primary" type="submit">
+          <button className="btn" type="submit">
             Login
           </button>
         </div> 
         <br/>
         <div>
-          <Link to="/register">
+          <Link className="App-link" to="/register">
             Create Account
           </Link>
         </div>

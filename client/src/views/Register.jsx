@@ -104,13 +104,13 @@ function Register() {
                 </div>
                 <br/>
                 <div>
-                    <button className="btn btn-primary" type="submit">
+                    <button className="btn" type="submit">
                         Register
                     </button>
                 </div>
                 <br/>
                 <div>
-                    <Link to="/">
+                    <Link className="App-link" to="/">
                         Login
                     </Link>
                 </div>

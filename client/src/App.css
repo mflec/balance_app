@@ -2,11 +2,17 @@ body {
   text-align: center;
   font-family: Graphik LCG Web, Graphik Arabic Web Regular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif;
   background-image: url("./background.jpg");
+  margin-top: 5rem;
+}
+
+footer{
+  color: #5a5a5aaf;
 }
 
 input{
-  width: 50rem;
-  height: 3rem;
+  width: 30rem;
+  height: 2rem;
+  margin-bottom: 1rem ;
 }
 
 .transaction {
@@ -74,15 +80,9 @@ input{
   color: rgb(255, 255, 255);
 }
 
-.trans-body-1, .trans-body-2, .trans-body-3{
-  text-align: justify;
-  border-bottom-style: solid;
-  border-bottom-width: 0.1rem ;
-  border-bottom-color: rgba(0, 0, 0, 0.377);
-}
 
 .addtransaction{
-  font-size: 4rem;
+  font-size: 2rem;
   border-bottom-style: solid;
   border-bottom-width: 0.1rem ;
   border-bottom-color: rgba(0, 0, 0, 0.185);
@@ -90,4 +90,82 @@ input{
 
 #alltransactions{
   background-color: rgba(255, 255, 255, 0.712);
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 4rem 0 4rem;
+}
+
+.trans-body-1, .trans-body-2, .trans-body-3{
+  text-align: justify;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1rem ;
+  border-bottom-color: rgba(0, 0, 0, 0.377);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.486);
+  margin-left: 1rem;
+}
+
+.nav {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  z-index: 10;
+}
+
+.nav-list {
+  position: fixed;
+  left: 0;
+  font-variant: small-caps;
+  display: flex;
+  margin-right: 1rem;
+}
+
+.nav-list a {
+  display: block;
+  font-size: 1rem;
+}
+
+.nav-list a:hover {
+  color: rgb(255, 255, 255);
+}
+
+@media(max-width: 1200px){
+  .nav{
+      background-image: none;
+      background-color: black;
+}
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+      justify-content: center;
+  }
+  .nav-list {
+      margin: 0 1rem;
+  }
+}
+
+.btn{
+  width: 7rem;
+  height: 2rem;
+  background-color: rgba(94, 213, 221, 0.795);
+  color: #282c34;
+  border-width: 0.01rem;
+  border-color: #282c344d;
+  border-radius: 0.2rem;
+}
+
+.btn:hover{
+  background-color: rgb(94, 181, 221);
+  ;
 }

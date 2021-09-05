@@ -14,9 +14,8 @@ function App() {
       <PrivateRoute exact path="/home" exact component={Profile} />
       <PrivateRoute exact path="/add" exact component={Add} />
       <Route exact path="/register" component={Register} />
-      <hr />
-      <footer id="footer" className="container text-muted">
-        BY LECHARES MILAGROS
+      <footer id="footer" >
+        <p>By Lechares Milagros</p>
       </footer>
     </div>
   );

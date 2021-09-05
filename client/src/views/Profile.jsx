@@ -39,7 +39,7 @@ function Profile() {
         <div>Loading...</div>
       }
       {transactions.length==0? <h3>You still haven't registered transactions</h3> : null}
-      {balance>0? <h3 className="balance"> TOTAL: {balance} </h3> : null}
+       <h3 className="balance"> TOTAL: {balance} </h3>
     </p>
   );
 }

@@ -52,7 +52,6 @@ function Add() {
     <p id= "addform">
       <Nav />
       <h3 className="addtransaction">ADD A TRANSACTION</h3>
-      <hr />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="col-sm-30">
@@ -63,7 +62,7 @@ function Add() {
             type="text" 
             className="form-control" 
             placeholder="Concept"
-            />
+            required/>
           </div>
         </div>
         <div className="form-group">
@@ -75,7 +74,7 @@ function Add() {
             type="text" 
             className="form-control" 
             placeholder="Amount"
-            />
+            required/>
           </div>
         </div>
         <div className="form-group">
@@ -87,14 +86,13 @@ function Add() {
             type="text" 
             className="form-control" 
             placeholder="Type"
-            />
+            required/>
           </div>
         </div>
         <div className="col-sm-offset-1 col-sm-30">
           <button
             type="submit"
-            className="btn btn-primary"
-            style={{ marginTop: "10px", float: "right" }}
+            className="btn"
           >
             SUBMIT
           </button>
