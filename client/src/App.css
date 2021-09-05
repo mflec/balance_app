@@ -3,7 +3,9 @@ body {
   font-family: Graphik LCG Web, Graphik Arabic Web Regular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif;
   background-image: url("./background.jpg");
   margin-top: 5rem;
+
 }
+
 
 footer{
   color: #5a5a5aaf;
@@ -45,7 +47,8 @@ input{
 }
 
 .App-link {
-  color: #61dafb;
+  text-align: center;
+  color: #3a6f7ed3;
 }
 
 @keyframes App-logo-spin {
@@ -86,6 +89,8 @@ input{
   border-bottom-style: solid;
   border-bottom-width: 0.1rem ;
   border-bottom-color: rgba(0, 0, 0, 0.185);
+  color: #3a6f7ed3;
+  margin: 0, 20rem , 0, 20rem;
 }
 
 #alltransactions{
@@ -93,6 +98,7 @@ input{
   border-style: solid;
   border-color: transparent;
   border-width: 0 4rem 0 4rem;
+  color: rgba(49, 49, 49, 0.938);
 }
 
 .trans-body-1, .trans-body-2, .trans-body-3{
@@ -158,8 +164,8 @@ a {
 .btn{
   width: 7rem;
   height: 2rem;
-  background-color: rgba(94, 213, 221, 0.795);
-  color: #282c34;
+  background-color: #3a6f7ed3;
+  color: rgb(255, 255, 255);
   border-width: 0.01rem;
   border-color: #282c344d;
   border-radius: 0.2rem;
@@ -167,5 +173,9 @@ a {
 
 .btn:hover{
   background-color: rgb(94, 181, 221);
-  ;
+}
+
+#title{
+  font-size: 2rem;
+  color: #3a6f7ed3;
 }

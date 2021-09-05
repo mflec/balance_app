@@ -52,7 +52,7 @@ function Add() {
     <p id= "addform">
       <Nav />
       <h3 className="addtransaction">ADD A TRANSACTION</h3>
-      <form onSubmit={handleSubmit}>
+      <form id="addinput"onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="col-sm-30">
             <input 

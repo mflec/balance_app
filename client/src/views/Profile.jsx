@@ -25,7 +25,7 @@ function Profile() {
   return (
     <p id= "alltransactions">
       <Nav/>
-      {user? <h2> All {user} transactions: </h2> : null}
+      {user? <h3 id="title"> All {user} transactions: </h3> : null}
       {transactions ? transactions.map(
         transaction =>
         <Transactions 

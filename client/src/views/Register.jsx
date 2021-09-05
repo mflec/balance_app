@@ -53,7 +53,7 @@ function Register() {
     return (
         <div id="register-body">
         <p >
-            <h3> REGISTER </h3>
+            <h3 id="title"> REGISTER </h3>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <input

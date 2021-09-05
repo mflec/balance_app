@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import axios from "axios";
-import { useHistory } from "react-router";
 
 function Home() {
   const [user, setUser] = useState({
@@ -39,7 +38,7 @@ function Home() {
 
   return (
     <p>
-      <h3> LOG IN </h3>
+      <h3 id="title"> LOG IN </h3>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <input
