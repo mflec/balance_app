@@ -49,36 +49,48 @@ function Add() {
   }
 
   return (
-    <p>
+    <p id= "addform">
       <Nav />
-      <h3>Add a Transaction</h3>
+      <h3 className="addtransaction">ADD A TRANSACTION</h3>
       <hr />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="concept" className="col-sm-2 control-label">
-            Concetp
-          </label>
-          <div className="col-sm-10">
-            <input onChange={handleChange} value={values.concept} name="concept" type="text" className="form-control" />
+          <div className="col-sm-30">
+            <input 
+            onChange={handleChange} 
+            value={values.concept} 
+            name="concept" 
+            type="text" 
+            className="form-control" 
+            placeholder="Concept"
+            />
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="amount" className="col-sm-2 control-label">
-            Amount
-          </label>
-          <div className="col-sm-10">
-            <input onChange={handleChange} value={values.amount} name="amount" type="text" className="form-control" />
+          <div className="col-sm-30">
+            <input 
+            onChange={handleChange} 
+            value={values.amount} 
+            name="amount" 
+            type="text" 
+            className="form-control" 
+            placeholder="Amount"
+            />
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="type" className="col-sm-2 control-label">
-            Type
-          </label>
-          <div className="col-sm-10">
-            <input onChange={handleChange} value={values.type} name="type" type="text" className="form-control" />
+          <div className="col-sm-30">
+            <input 
+            onChange={handleChange} 
+            value={values.type} 
+            name="type" 
+            type="text" 
+            className="form-control" 
+            placeholder="Type"
+            />
           </div>
         </div>
-        <div className="col-sm-offset-2 col-sm-10">
+        <div className="col-sm-offset-1 col-sm-30">
           <button
             type="submit"
             className="btn btn-primary"
@@ -88,6 +100,7 @@ function Add() {
           </button>
         </div>
       </form>
+      <br/>
     </p>
   );
 }

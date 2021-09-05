@@ -17,12 +17,15 @@ function Profile() {
     const token = localStorage.getItem('token')
     dispatch(getTransactions(token));
   }, [dispatch]);
-
+  let balance = parseInt(0)
+  if(transactions) transactions.forEach(transaction => {
+  balance += parseInt(transaction.amount)
+  })
   console.log(transactions)
   return (
-    <p>
+    <p id= "alltransactions">
       <Nav/>
-      <h1> All {user} transactions </h1>
+      {user? <h2> All {user} transactions: </h2> : null}
       {transactions ? transactions.map(
         transaction =>
         <Transactions 
@@ -31,9 +34,12 @@ function Profile() {
         date={transaction.date}
         type={transaction.type}
         />
+        
       ) :
         <div>Loading...</div>
       }
+      {transactions.length==0? <h3>You still haven't registered transactions</h3> : null}
+      {balance>0? <h3 className="balance"> TOTAL: {balance} </h3> : null}
     </p>
   );
 }

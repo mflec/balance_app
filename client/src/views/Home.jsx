@@ -64,11 +64,13 @@ function Home() {
             onChange={handleChange}
           />
         </div>
+        <br/>
         <div>
-          <button type="submit">
+          <button className="btn btn-primary" type="submit">
             Login
           </button>
-        </div>
+        </div> 
+        <br/>
         <div>
           <Link to="/register">
             Create Account

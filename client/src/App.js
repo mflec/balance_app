@@ -16,7 +16,7 @@ function App() {
       <Route exact path="/register" component={Register} />
       <hr />
       <footer id="footer" className="container text-muted">
-        Full stack Challenge
+        BY LECHARES MILAGROS
       </footer>
     </div>
   );

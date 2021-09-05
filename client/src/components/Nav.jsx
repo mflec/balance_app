@@ -23,7 +23,6 @@ function Nav() {
         <div id="nav-items" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
           <li>
-            <button onClick={Logout}> Logout </button>
           </li>
             <li>
               <Link to={"/add/"}>ADD TRANSACTION</Link>
@@ -32,6 +31,7 @@ function Nav() {
                 <Link to={"/home"}>ALL TRANSACTIONS </Link> 
               </li>
           </ul>
+            <button onClick={Logout} id="logout"> LOGOUT </button>
         </div>
       </div>
     </div>

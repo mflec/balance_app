@@ -1,15 +1,19 @@
 body {
   text-align: center;
+  font-family: Graphik LCG Web, Graphik Arabic Web Regular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif;
+  background-image: url("./background.jpg");
+}
+
+input{
+  width: 50rem;
+  height: 3rem;
 }
 
 .transaction {
   text-align: justify;
+  background-color: rgba(46, 49, 49, 0.589);
+  color: rgb(255, 255, 255);
 }
-
-hr{
-  color: #282c34;
-}
-
 
 .App-logo {
   height: 40vmin;
@@ -23,6 +27,7 @@ hr{
 }
 
 .App-header {
+  position: fixed;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -48,4 +53,41 @@ hr{
 
 #dontmatch{
   color: red
+}
+
+#logout{
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.651);
+  position: fixed;
+  right: 2rem;
+  top: 1.6rem;
+}
+
+#logout:hover{
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.balance{
+  background-color: rgb(46, 49, 49);
+  color: rgb(255, 255, 255);
+}
+
+.trans-body-1, .trans-body-2, .trans-body-3{
+  text-align: justify;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1rem ;
+  border-bottom-color: rgba(0, 0, 0, 0.377);
+}
+
+.addtransaction{
+  font-size: 4rem;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1rem ;
+  border-bottom-color: rgba(0, 0, 0, 0.185);
+}
+
+#alltransactions{
+  background-color: rgba(255, 255, 255, 0.712);
 }

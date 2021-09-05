@@ -51,7 +51,8 @@ function Register() {
       
 
     return (
-        <p>
+        <div id="register-body">
+        <p >
             <h3> REGISTER </h3>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
@@ -101,11 +102,13 @@ function Register() {
                         onChange={handleChange}
                     />
                 </div>
+                <br/>
                 <div>
-                    <button type="submit">
+                    <button className="btn btn-primary" type="submit">
                         Register
                     </button>
                 </div>
+                <br/>
                 <div>
                     <Link to="/">
                         Login
@@ -113,6 +116,7 @@ function Register() {
                 </div>
             </form>
         </p>
+        </div>
     );
 }
 
