@@ -65,6 +65,7 @@ function Register() {
                         value={user.name}
                         placeholder="Enter your name..."
                         onChange={handleChange}
+                        className="col-sm-offset-1 col-sm-30"
                     />
                 </div>
                 <div>
@@ -76,6 +77,7 @@ function Register() {
                         name="email"
                         value={user.email}
                         placeholder="example@mail.com"
+                        className="col-sm-offset-1 col-sm-30"
                         onChange={handleChange}
                     />
                 </div>
@@ -88,6 +90,7 @@ function Register() {
                         name="password"
                         value={user.password}
                         placeholder="Enter your Password..."
+                        className="col-sm-offset-1 col-sm-30"
                         onChange={handleChange}
                     />
                 </div>
@@ -99,6 +102,7 @@ function Register() {
                         name="confirmPassword"
                         value={user.confirmPassword}
                         placeholder="Confirm your Password..."
+                        className="col-sm-offset-1 col-sm-30"
                         onChange={handleChange}
                     />
                 </div>

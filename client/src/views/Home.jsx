@@ -50,6 +50,7 @@ function Home() {
             value={user.email}
             placeholder="example@mail.com"
             onChange={handleChange}
+            
           />
         </div>
         <div>
