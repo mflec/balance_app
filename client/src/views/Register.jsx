@@ -53,8 +53,8 @@ function Register() {
                 .catch(() => {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
+                        title: 'Something went wrong!',
+                        text: 'Your username may already exist',
                         footer: '<a href="/login"> Login </a>'
                     })
                 }
