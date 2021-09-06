@@ -3,12 +3,21 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
+
 
 function Home() {
+  const [show, setShow] = useState(false);
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const handleShowHide = () => {
+    setShow(!show);
+  };
 
   function handleChange(e) {
     setUser({
@@ -57,12 +66,25 @@ function Home() {
           <input
             id="password"
             required="required"
-            type="password"
+            type={show ? "text" : "password"}
             name="password"
             value={user.password}
             placeholder="Enter your Password..."
             onChange={handleChange}
           />
+          {show ? (
+            <FontAwesomeIcon
+              onClick={handleShowHide}
+              icon={faEye}
+              id="show_hide"
+            />
+          ) : (
+            <FontAwesomeIcon
+              onClick={handleShowHide}
+              icon={faEyeSlash}
+              id="show_hide"
+            />
+          )}
         </div>
         <br/>
         <div>

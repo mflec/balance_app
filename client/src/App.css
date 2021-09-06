@@ -23,6 +23,10 @@ input{
   margin-bottom: 1rem ;
 }
 
+#password{
+  width: 48.9rem;
+}
+
 @media (max-width: 570px) {
   input{
     width: 100%;
