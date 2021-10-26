@@ -89,8 +89,9 @@ function Add() {
               className="form-control"
               placeholder="Type"
               required>
-              <option value="ingress">Ingress</option>
+              <option>Select a type</option>
               <option value="egress">Egress</option>
+              <option value="ingress">Ingress</option>
             </select>
           </div>
         </div>
