@@ -3,7 +3,9 @@ import React from "react";
 import Swal from 'sweetalert2';
 import Nav from '../components/Nav';
 import { useHistory } from "react-router";
-
+import {
+  Select
+} from '@chakra-ui/react'
 
 function Add() {
   const history = useHistory()
@@ -25,7 +27,7 @@ function Add() {
     const token = localStorage.getItem("token")
     axios
       .post('/transaction/post', { ...values, token: token })
-      .then(()=>{
+      .then(() => {
         history.push("/home")
         Swal.fire({
           position: 'center',
@@ -40,7 +42,7 @@ function Add() {
           return Swal.fire({
             position: 'center',
             icon: 'error',
-            title: 'ALL DATA IS REQUIRED',
+            title: 'Something was wrong',
             showConfirmButton: false,
             timer: 1500
           })
@@ -49,44 +51,47 @@ function Add() {
   }
 
   return (
-    <p id= "addform">
+    <p id="addform">
       <Nav />
       <h3 className="addtransaction">ADD A TRANSACTION</h3>
-      <form id="addinput"onSubmit={handleSubmit}>
+      <form id="addinput" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="col-sm-30">
-            <input 
-            onChange={handleChange} 
-            value={values.concept} 
-            name="concept" 
-            type="text" 
-            className="form-control" 
-            placeholder="Concept"
-            required/>
+            <input
+              onChange={handleChange}
+              value={values.concept}
+              name="concept"
+              type="text"
+              className="form-control"
+              placeholder="Concept"
+              required />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-30">
-            <input 
-            onChange={handleChange} 
-            value={values.amount} 
-            name="amount" 
-            type="text" 
-            className="form-control" 
-            placeholder="Amount"
-            required/>
+            <input
+              onChange={handleChange}
+              value={values.amount}
+              name="amount"
+              type="text"
+              className="form-control"
+              placeholder="Amount"
+              required />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-30">
-            <input 
-            onChange={handleChange} 
-            value={values.type} 
-            name="type" 
-            type="text" 
-            className="form-control" 
-            placeholder="Type"
-            required/>
+            <select
+              onChange={handleChange}
+              value={values.type}
+              name="type"
+              type="text"
+              className="form-control"
+              placeholder="Type"
+              required>
+              <option value="ingress">Ingress</option>
+              <option value="egress">Egress</option>
+            </select>
           </div>
         </div>
         <div className="col-sm-offset-1 col-sm-30">
@@ -98,7 +103,7 @@ function Add() {
           </button>
         </div>
       </form>
-      <br/>
+      <br />
     </p>
   );
 }

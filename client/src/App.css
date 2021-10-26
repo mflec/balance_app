@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
 body {
   text-align: center;
-  font-family: Graphik LCG Web, Graphik Arabic Web Regular, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, Lucida Grande, Sans-Serif;
+  font-family: 'Alumni Sans', sans-serif;
   margin-top: 5rem;
 }
 
 @media (min-width: 580px) {
   body {
-    background-image: url("./background.jpg");
+
     background-repeat:no-repeat;
     background-position:center;
     background-attachment:fixed;
@@ -18,13 +20,14 @@ footer{
 }
 
 input{
-  width: 50rem;
-  height: 2rem;
-  margin-bottom: 1rem ;
+  width: 100vh;
+  height: 5vh;
+  margin-bottom: 1vh ;
+  border-radius: 0.5vh;
 }
 
 #password{
-  width: 48.9rem;
+  width: 100vh;
 }
 
 @media (max-width: 570px) {
@@ -35,8 +38,8 @@ input{
 
 .transaction {
   text-align: justify;
-  background-color: rgba(46, 49, 49, 0.589);
-  color: rgb(255, 255, 255);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
 }
 
 .App-logo {
@@ -90,14 +93,20 @@ input{
   top: 0.85em;
 }
 
+select{
+  width: 101.3vh;
+  height: 5vh;
+  margin-bottom: 7vh;
+}
+
 #logout:hover{
   background-color: transparent;
   color: rgb(255, 255, 255);
 }
 
 .balance{
-  background-color: rgb(46, 49, 49);
-  color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.836);
+  font-size: 5vh;
 }
 
 
@@ -179,10 +188,29 @@ a {
   border-width: 0.01rem;
   border-color: #282c344d;
   border-radius: 0.2rem;
+  appearance: auto;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0em;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-image: initial;
 }
 
 .btn:hover{
-  background-color: rgb(94, 181, 221);
+  background-color: rgb(48, 56, 59);
 }
 
 #title{

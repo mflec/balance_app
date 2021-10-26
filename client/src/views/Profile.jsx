@@ -2,8 +2,16 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTransactions } from "../redux/actions";
-import Transactions from "../components/Transactions";
 import Nav from '../components/Nav';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  TableCaption,
+  Td,
+} from '@chakra-ui/react'
 
 
 
@@ -18,29 +26,43 @@ function Profile() {
     dispatch(getTransactions(token));
   }, [dispatch]);
   let balance = parseInt(0)
-  if(transactions) transactions.forEach(transaction => {
-  balance += parseInt(transaction.amount)
+  if (transactions) transactions.forEach(transaction => {
+ if(transaction.type=="ingress") balance += parseInt(transaction.amount)
+ if(transaction.type=="egress") balance -= parseInt(transaction.amount)
   })
   console.log(transactions)
-  return (
-    <p id= "alltransactions">
-      <Nav/>
-      {user? <h3 id="title"> All {user} transactions: </h3> : null}
-      {transactions ? transactions.map(
-        transaction =>
-        <Transactions 
-        concept={transaction.concept}
-        amount={transaction.amount}
-        date={transaction.date}
-        type={transaction.type}
-        />
-        
-      ) :
-        <div>Loading...</div>
-      }
-      {transactions.length==0? <h3>You still haven't registered transactions</h3> : null}
-       <h3 className="balance"> TOTAL: {balance} </h3>
-    </p>
+  return (<div>
+      <Nav />
+      {user ? <h3 id="title"> All {user} transactions: </h3> : null}
+      <Table size="sm" colorScheme="teal" width="220vh" fontSize="3vh">
+        <TableCaption marginTop="5vh">
+          In this table you can view all your transactions
+        </TableCaption>
+        <Thead background="#3a6f7ed3">
+          <Tr>
+            <Th>Concept</Th>
+            <Th>Amount</Th>
+            <Th>Date</Th>
+            <Th>Type</Th>
+          </Tr>
+        </Thead>
+        <Tbody background="#3a6f7e36">
+          {transactions ? transactions.map(
+            transaction =>
+              <Tr key={transaction.id}>
+                <Td>{transaction.concept}</Td>
+                <Td>{transaction.amount}</Td>
+                <Td>{transaction.date}</Td>
+                <Td>{transaction.type}</Td>
+              </Tr>
+          ) :
+            <div>Loading...</div>
+          }
+        </Tbody>
+      </Table>
+        {transactions.length == 0 ? <h3>You still haven't registered transactions</h3> : null}
+        <h3 className="balance"> TOTAL: {balance} </h3>
+    </div>
   );
 }
 

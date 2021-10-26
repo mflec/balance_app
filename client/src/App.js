@@ -1,4 +1,4 @@
-import Home from "./views/Home";
+import Home from "./views/Login";
 import { Route } from "react-router-dom";
 import Add from "./views/Add";
 import Profile from "./views/Profile";

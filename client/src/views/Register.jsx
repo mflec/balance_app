@@ -4,14 +4,10 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import axios from "axios";
 import Swal from 'sweetalert2';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 
 function Register() {
     const history = useHistory()
-    const [show, setShow] = useState(false);
-    const [showpass2, setShowpass2] = useState(false);
     const [dontMatch, setDontMatch] = useState(false);
     const [user, setUser] = useState({
         name: "",
@@ -26,14 +22,6 @@ function Register() {
             [e.target.name]: e.target.value,
         });
     }
-
-    const handleShowHide = () => {
-        setShow(!show);
-    };
-
-    const handleShowHide2 = () => {
-		setShowpass2(!showpass2);
-	};
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -98,7 +86,7 @@ function Register() {
                     <div>
                         <input
                             id="password"
-                            type={show ? "text" : "password"}
+                            type="password"
                             required="required"
                             name="password"
                             value={user.password}
@@ -106,24 +94,11 @@ function Register() {
                             className="col-sm-offset-1 col-sm-30"
                             onChange={handleChange}
                         />
-                        {show ? (
-                            <FontAwesomeIcon
-                                onClick={handleShowHide}
-                                icon={faEye}
-                                id="show_hide"
-                            />
-                        ) : (
-                            <FontAwesomeIcon
-                                onClick={handleShowHide}
-                                icon={faEyeSlash}
-                                id="show_hide"
-                            />
-                        )}
                     </div>
                     <div>
                         <input
                             id="password"
-                            type={showpass2 ? "text" : "password"}
+                            type= "password"
                             required="required"
                             name="confirmPassword"
                             value={user.confirmPassword}
@@ -131,19 +106,6 @@ function Register() {
                             className="col-sm-offset-1 col-sm-30"
                             onChange={handleChange}
                         />
-                        {showpass2 ? (
-                            <FontAwesomeIcon
-                                onClick={handleShowHide2}
-                                icon={faEye}
-                                id="show_hide"
-                            />
-                        ) : (
-                            <FontAwesomeIcon
-                                onClick={handleShowHide2}
-                                icon={faEyeSlash}
-                                id="show_hide"
-                            />
-                        )}
                     </div>
                     <br />
                     <div>
